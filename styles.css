@@ -1,0 +1,123 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+div,
+span,
+p,
+span,
+ul,
+li,
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: content-box;
+}
+
+.wrapper {
+    margin-top: 10rem;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    font-size: 24px;
+    font-family: monospace;
+    padding: 1.5rem;
+    background-color: darkgray;
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
+.calculator__display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #323232;
+    color: #f4f4f4;
+    text-align: right;
+    font-size: 3rem;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-bottom: none;
+    padding: 1rem 1rem 1rem 2rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    word-break: keep-all;
+    overflow-x: hidden;
+    max-width: 476px;
+    min-height: 55px;
+}
+
+.calculator__keys {
+    display: grid;
+    grid-template-areas: "add sub mult div"
+        "seven eight nine eq"
+        "four five sex eq"
+        "one two three eq"
+        "zero dot clear eq";
+}
+
+button:not(.key__equal) {
+    height: 5rem;
+    font-size: 2rem;
+}
+
+button {
+    width: 8rem;
+    text-align: center;
+    border: 2px solid gray;
+}
+
+button:active {
+    border-right:none;
+    border-bottom: none;
+    margin-left: -0.1px;
+    margin-top: 0.5px;
+}
+
+.key__operator {
+    border-top: none;
+}
+
+.key__number,
+.key__dot,
+.key__clear {
+    background-color: floralwhite;
+}
+
+.key__equal {
+    grid-area: eq;
+    border-bottom-right-radius: 15px;
+    background-color: darksalmon;
+    font-size: 3rem;
+}
+
+#zero {
+    border-bottom-left-radius: 15px;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 640px) {
+    body, html {
+        font-size: 12px;
+    }
+    
+    .calculator__display {
+        min-height: 35px;
+    }
+}
+@media only screen and (max-width: 499px) {
+    body, html {
+        font-size: 8px;
+    }
+
+    .calculator__display {
+        min-height: 35px;
+    }
+}
